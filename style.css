@@ -276,221 +276,96 @@ button {
   font-size: 0.88rem;
 }
 
-/* ==================== HERO SECTION ==================== */
-.hero {
-  padding: 4rem 0 3.5rem;
-  background: linear-gradient(180deg, rgba(247, 230, 236, 0.6) 0%, var(--color-bg) 100%);
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #ffffff;
-  border: 1.5px solid var(--color-primary-border);
-  color: var(--color-primary-dark);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  padding: 0.35rem 1rem;
-  border-radius: var(--radius-full);
-  margin-bottom: 1.2rem;
-  box-shadow: var(--shadow-sm);
-}
-
-.pulse-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--color-primary);
-  border-radius: 50%;
-  animation: pulse 1.8s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(0.9); opacity: 0.8; }
-  50% { transform: scale(1.3); opacity: 1; }
-  100% { transform: scale(0.9); opacity: 0.8; }
-}
-
-.hero-title {
-  font-family: var(--font-serif);
-  font-size: 2.8rem;
-  line-height: 1.18;
-  color: var(--color-primary-dark);
-  margin-bottom: 1.2rem;
-}
-
-.hero-title em {
-  font-style: italic;
-  color: var(--color-primary);
-}
-
-.hero-description {
-  font-size: 1.08rem;
-  color: var(--color-text-muted);
-  margin-bottom: 1.8rem;
-  line-height: 1.7;
-}
-
-/* Pílulas de Benefícios (Pills) */
-.hero-pills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem 1rem;
-  margin-bottom: 2rem;
-}
-
-.pill-item {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: #ffffff;
-  border: 1px solid var(--color-primary-border);
-  padding: 0.55rem 0.95rem;
-  border-radius: var(--radius-full);
-  box-shadow: var(--shadow-sm);
-}
-
-.pill-check {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  color: #ffffff;
-  font-size: 0.75rem;
-  font-weight: 900;
-  flex-shrink: 0;
-}
-
-.pill-text {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--color-text);
-  white-space: nowrap;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
-
-.hero-trust-badge {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
-}
-
-/* SHOWCASE CARD COM FOTO COMPLETA VALORIZADA */
-.showcase-card {
-  background: #ffffff; /* CAIXA OFF-WHITE */
-  border: 1.5px solid var(--color-primary-border);
-  border-radius: var(--radius-lg);
-  padding: 2rem 1.8rem;
-  box-shadow: var(--shadow-lg);
-  text-align: center;
-}
-
-.showcase-portrait-wrapper {
+/* ==================== HERO SECTION FULL BACKGROUND ==================== */
+.hero-full-bg {
   position: relative;
-  width: 100%;
-  max-width: 360px;
-  height: 440px;
-  margin: 0 auto 1.4rem;
-  border-radius: var(--radius-md);
+  min-height: 640px;
+  background: var(--color-bg);
   overflow: hidden;
-  border: 2px solid var(--color-primary-border);
-  box-shadow: var(--shadow-md);
+  padding: 4.5rem 0;
+  display: flex;
+  align-items: center;
 }
 
-.showcase-portrait-img {
+.hero-container-rel {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+}
+
+.hero-content-left {
+  max-width: 620px;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(90deg, #fcf0f4 0%, #fcf0f4 45%, rgba(252, 240, 244, 0.85) 60%, rgba(252, 240, 244, 0.15) 80%, rgba(252, 240, 244, 0) 100%);
+  pointer-events: none;
+}
+
+.hero-bg-img-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 52%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-bg-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  transition: transform var(--transition-smooth);
 }
 
-.showcase-card:hover .showcase-portrait-img {
-  transform: scale(1.03);
-}
-
-.showcase-badge {
+.hero-badge-overlay {
   position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 24px;
+  right: 40px;
   background: var(--color-primary-dark);
   color: #ffffff;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-  padding: 0.35rem 1rem;
+  padding: 0.4rem 1.2rem;
   border-radius: var(--radius-full);
-  white-space: nowrap;
+  z-index: 6;
   box-shadow: var(--shadow-md);
 }
 
-.showcase-title {
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  color: var(--color-primary-dark);
-  margin-bottom: 0.2rem;
-}
-
-.showcase-sub {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.8rem;
-}
-
-.showcase-desc {
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
-  margin-bottom: 1.4rem;
-}
-
-.showcase-stats {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  padding-top: 1.2rem;
-  border-top: 1px dashed var(--color-primary-border);
-}
-
-.showcase-stats strong {
-  display: block;
-  font-family: var(--font-title);
-  font-size: 1.25rem;
-  color: var(--color-primary-dark);
-}
-.showcase-stats span {
-  font-size: 0.78rem;
-  color: var(--color-text-muted);
-}
-
-.stat-divider {
-  width: 1px;
-  height: 28px;
-  background: var(--color-primary-border);
+@media (max-width: 991px) {
+  .hero-full-bg {
+    flex-direction: column;
+    padding: 2.5rem 0 3rem;
+  }
+  .hero-bg-overlay {
+    display: none;
+  }
+  .hero-content-left {
+    max-width: 100%;
+  }
+  .hero-bg-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    margin-top: 2rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 2px solid var(--color-primary-border);
+    box-shadow: var(--shadow-lg);
+  }
+  .hero-badge-overlay {
+    bottom: 16px;
+    right: 50%;
+    transform: translateX(50%);
+    white-space: nowrap;
+  }
 }
 
 /* ==================== HIGHLIGHTS (INSTAGRAM CIRCLES) ==================== */

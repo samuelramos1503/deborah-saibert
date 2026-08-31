@@ -276,11 +276,11 @@ button {
   font-size: 0.88rem;
 }
 
-/* ==================== HERO SECTION FULL BACKGROUND (FOTO DA MESA + TEXTO ELEGANTE) ==================== */
+/* ==================== HERO SECTION FULL BACKGROUND (FOTO ROSA DE FUNDO + TEXTO LIMPO) ==================== */
 .hero-full-bg {
   position: relative;
-  min-height: 680px;
-  background: #fcf0f4;
+  min-height: 640px;
+  background: var(--color-bg);
   overflow: hidden;
   padding: 4rem 0;
   display: flex;
@@ -293,15 +293,8 @@ button {
   width: 100%;
 }
 
-.hero-content-card {
-  max-width: 630px;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1.5px solid var(--color-primary-border);
-  border-radius: var(--radius-lg);
-  padding: 2.8rem 2.4rem;
-  box-shadow: 0 12px 35px rgba(110, 42, 68, 0.12);
+.hero-content-left {
+  max-width: 600px;
 }
 
 .hero-bg-overlay {
@@ -311,7 +304,7 @@ button {
   width: 100%;
   height: 100%;
   z-index: 2;
-  background: linear-gradient(90deg, #fcf0f4 0%, rgba(252, 240, 244, 0.95) 42%, rgba(252, 240, 244, 0.4) 65%, rgba(252, 240, 244, 0) 100%);
+  background: linear-gradient(90deg, #fcf0f4 0%, #fcf0f4 48%, rgba(252, 240, 244, 0.8) 65%, rgba(252, 240, 244, 0) 88%);
   pointer-events: none;
 }
 
@@ -319,9 +312,12 @@ button {
   position: absolute;
   top: 0;
   right: 0;
-  width: 55%;
+  width: 52%;
   height: 100%;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .hero-bg-img {
@@ -369,15 +365,6 @@ button {
   line-height: 1.75;
 }
 
-.about-img-banner {
-  width: 100%;
-  height: auto;
-  max-height: 520px;
-  object-fit: cover;
-  object-position: center 20%;
-  transition: transform var(--transition-smooth);
-}
-
 @media (max-width: 991px) {
   .hero-full-bg {
     flex-direction: column;
@@ -386,9 +373,8 @@ button {
   .hero-bg-overlay {
     display: none;
   }
-  .hero-content-card {
+  .hero-content-left {
     max-width: 100%;
-    padding: 1.8rem 1.4rem;
   }
   .hero-title {
     font-size: 2.1rem;
@@ -396,12 +382,18 @@ button {
   .hero-bg-img-wrapper {
     position: relative;
     width: 100%;
-    height: 380px;
+    height: 420px;
     margin-top: 2rem;
     border-radius: var(--radius-lg);
     overflow: hidden;
     border: 2px solid var(--color-primary-border);
     box-shadow: var(--shadow-lg);
+  }
+  .hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
   }
   .hero-badge-overlay {
     bottom: 16px;
